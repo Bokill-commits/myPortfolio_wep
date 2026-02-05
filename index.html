@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daekyu Kang | Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --accent-color: #3498db;
+            --bg-light: #f8f9fa;
+            --text-dark: #333;
+            --text-gray: #666;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Noto Sans KR', sans-serif;
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        /* 헤더 스타일 */
+        header {
+            background: linear-gradient(135deg, #2c3e50 0%, #000000 100%);
+            color: white;
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+            letter-spacing: 2px;
+        }
+
+        header p {
+            font-weight: 300;
+            opacity: 0.9;
+            margin-top: 10px;
+        }
+
+        /* 메인 컨테이너 */
+        main {
+            max-width: 1000px;
+            margin: -40px auto 40px;
+            padding: 0 20px;
+        }
+
+        /* 섹션 공통 스타일 */
+        section {
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            margin-bottom: 30px;
+        }
+
+        h3 {
+            border-left: 5px solid var(--accent-color);
+            padding-left: 15px;
+            margin-bottom: 25px;
+            color: var(--primary-color);
+        }
+
+        /* 스킬 뱃지 스타일 */
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .skill-badge {
+            background: #eef2f7;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--primary-color);
+        }
+
+        /* 프로젝트 카드 스타일 */
+        .project-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 30px;
+        }
+
+        .project-card {
+            display: flex;
+            flex-direction: row;
+            gap: 25px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 30px;
+            transition: transform 0.3s ease;
+        }
+
+        .project-card:last-child { border-bottom: none; }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .project-img {
+            width: 280px;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .project-info { flex: 1; }
+
+        .project-info h4 {
+            margin: 0 0 10px 0;
+            font-size: 1.4rem;
+            color: var(--accent-color);
+        }
+
+        .project-desc {
+            font-size: 15px;
+            color: var(--text-gray);
+            margin-bottom: 15px;
+        }
+
+        /* 버튼 스타일 */
+        .btn-group {
+            display: flex;
+            gap: 10px;
+        }
+
+        .btn {
+            text-decoration: none;
+            padding: 8px 18px;
+            border-radius: 6px;
+            font-size: 13px;
+            font-weight: 500;
+            transition: all 0.2s;
+            display: inline-flex;
+            align-items: center;
+        }
+
+        .btn-yt { background: #ff0000; color: white; }
+        .btn-gh { background: #24292e; color: white; }
+        .btn:hover { opacity: 0.8; transform: scale(1.05); }
+
+        /* 연락처 섹션 */
+        .contact-info {
+            text-align: center;
+        }
+
+        .email-link {
+            font-size: 1.2rem;
+            color: var(--accent-color);
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px;
+            color: #999;
+            font-size: 13px;
+        }
+
+        /* 모바일 대응 */
+        @media (max-width: 768px) {
+            .project-card { flex-direction: column; }
+            .project-img { width: 100%; height: auto; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>DAEKYU KANG</h1>
+    <p>AI Data Analyst & Software Developer</p>
+</header>
+
+<main>
+    <section>
+        <h3>Technical Skills</h3>
+        <div class="skills-container">
+            <span class="skill-badge">Python</span>
+            <span class="skill-badge">Machine Learning</span>
+            <span class="skill-badge">Deep Learning</span>
+            <span class="skill-badge">SQL / NoSQL</span>
+            <span class="skill-badge">PyTorch</span>
+            <span class="skill-badge">HTML/CSS/JS</span>
+            <span class="skill-badge">Data Analysis</span>
+        </div>
+    </section>
+
+    <section>
+        <h3>Featured Projects</h3>
+        <div class="project-grid">
+            
+            <div class="project-card">
+                <img src="images/delivery_image.png" alt="Project 1" class="project-img">
+                <div class="project-info">
+                    <h4>Delivery Match AI</h4>
+                    <p class="project-desc">
+                        탁송 기사와 주문을 효율적으로 매칭하는 AI 알고리즘 프로젝트입니다. 
+                        데이터 분석을 통해 최적의 경로와 기사 배정 로직을 구현하였습니다.
+                    </p>
+                    <div class="btn-group">
+                        <a href="https://youtu.be/hjLLEnQoe_Q" target="_blank" class="btn btn-yt">YouTube</a>
+                        <a href="https://github.com/Bokill-commits/TeamProject" target="_blank" class="btn btn-gh">GitHub</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <img src="images/malware_img.png" alt="Project 2" class="project-img">
+                <div class="project-info">
+                    <h4>DevTools Malware Scanner</h4>
+                    <p class="project-desc">
+                        실시간으로 시스템의 악성 행위를 감지하고 스캔하는 보안 툴입니다. 
+                        딥러닝 모델을 활용하여 알려지지 않은 패턴의 악성코드를 식별합니다.
+                    </p>
+                    <div class="btn-group">
+                        <a href="https://youtu.be/Ly1jYo7CWos" target="_blank" class="btn btn-yt">YouTube</a>
+                        <a href="https://github.com/Bokill-commits/TeamProject" target="_blank" class="btn btn-gh">GitHub</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="contact-info">
+        <h3>Contact Me</h3>
+        <p>새로운 프로젝트와 협업 제안을 기다립니다.</p>
+        <a href="mailto:your-email@gmail.com" class="email-link">your-email@gmail.com</a>
+        <div style="margin-top: 20px;">
+            <button onclick="alert('환영합니다!');" style="padding: 10px 20px; cursor:pointer;">방문 확인 테스트</button>
+        </div>
+    </section>
+</main>
+
+<footer>
+    © 2026 Daekyu Kang. Built with passion.
+</footer>
+
+</body>
+</html>
